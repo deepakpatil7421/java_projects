@@ -6,7 +6,7 @@ public class Student {
 	private String firstName;
 	private String lastName;
 	private int gradeYear;
-	private String courses = null;
+	private String courses = "";
 	private int tuitionBalance = 0;
 	private String StudentID;
 	private static int costOfCourse = 600;
@@ -51,4 +51,24 @@ public class Student {
 		System.out.println("Tuition Balance :" + tuitionBalance);
 	}
 
+	public void viewBalance() {
+
+		System.out.println("your tuition balance is :" + tuitionBalance);
+
+	}
+
+	public void payTuition() {
+		viewBalance();
+		System.out.println("Enter your payment: $");
+		Scanner sc = new Scanner(System.in);
+		int payment = sc.nextInt();
+		tuitionBalance = tuitionBalance - payment;
+		System.out.println("Thank you for your paymant:" + tuitionBalance);
+		viewBalance();
+	}
+
+	public String showInfo() {
+		return "Name : " + firstName + " " +lastName + "\nCourse Enrolled :" + courses + "\nBalance :"
+				+ tuitionBalance;
+	}
 }
