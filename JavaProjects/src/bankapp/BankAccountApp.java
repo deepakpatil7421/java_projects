@@ -10,6 +10,10 @@ public class BankAccountApp {
 		System.out.println("*********************");
 		chacc.showInfo();
 
+		ss1.deposit(5000);
+		ss1.withdraw(2000);
+		ss1.transfer("Brokrage", 1000);
+
 	}
 
 }

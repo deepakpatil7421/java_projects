@@ -14,8 +14,10 @@ public abstract class Account implements IRate {
 		balance = initDeposit;
 		index++;
 		this.accountNumber = setAccountNumber();
-
+		setRate();
 	}
+
+	public abstract void setRate();
 
 	private String setAccountNumber() {
 		String lastTwoSSN = sSN.substring(sSN.length() - 2, sSN.length());
@@ -25,8 +27,32 @@ public abstract class Account implements IRate {
 
 	}
 
+	public void deposit(double amount) {
+		balance = balance + amount;
+		System.out.println("Depositing $" + amount);
+		printBalance();
+	}
+
+	public void withdraw(double amount) {
+		balance = balance - amount;
+		System.out.println("Withdraw $" + amount);
+		printBalance();
+
+	}
+
+	public void transfer(String toWhere, double amount) {
+		balance = balance - amount;
+		System.out.println("Transfering $ " + amount + " to " + toWhere);
+		printBalance();
+	}
+
+	public void printBalance() {
+		System.out.println("Your Balance is: " + balance);
+	}
+
 	public void showInfo() {
 		System.out.println("Name : " + name + "\n" + "Account Number: " + accountNumber + "\n" + "Balance: " + balance
+				+ "\nRate: " + rate + "%"
 
 		);
 	}
