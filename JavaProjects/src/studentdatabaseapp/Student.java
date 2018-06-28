@@ -68,7 +68,7 @@ public class Student {
 	}
 
 	public String showInfo() {
-		return "Name : " + firstName + " " +lastName + "\nCourse Enrolled :" + courses + "\nBalance :"
+		return "Name : " + firstName + " " + lastName + "\nCourse Enrolled :" + courses + "\nBalance :"
 				+ tuitionBalance;
 	}
 }
